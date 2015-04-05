@@ -150,7 +150,7 @@ class Service extends BaseService
         }
 
         $requiredProperties = $properties = array();
-        foreach ($service->fields as $field) {
+        foreach ($service->fields['input_filter'] as $field) {
             $properties[$field->getName()] = array(
                 'type' => method_exists($field, 'getType') ? $field->getType() : 'string',
                 'description' => $field->getDescription()
